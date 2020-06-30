@@ -87,7 +87,7 @@ public struct OKLogBinder: View {
             Spacer()
             
             Button(action: { self.showingShareSheet.toggle() }) {
-                Symbol(macOS: "􀈂", iOS: "square.and.arrow.up")
+                Image(systemName: "square.and.arrow.up")
             }
             .sheet(isPresented: $showingShareSheet) {
                 ShareSheet(activityItems: [self.selectedLogJSON])
