@@ -30,15 +30,9 @@ public struct OKLogViewerButton: View {
     
     public var body: some View {
         Button(action: { self.showingLogs.toggle() } ) {
-            Text("📜")
+            Image(systemName: "scroll.fill")
+                .resizable()
                 .accessibility(label: Text("View OctopusKit Log"))
-                .padding(5)
-                .background(
-                    RoundedRectangle(cornerRadius: 5)
-                        .foregroundColor(.secondary)
-                        .opacity(0.8)
-                        .blendMode(.difference)
-                )
         }
         .sheet(isPresented: $showingLogs) {
             OKLogBinder(logs: self.logs, showingLogs: self.$showingLogs)
